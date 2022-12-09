@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.event.dto.OrganizerDTO;
+import com.event.exception.NoEventException;
 import com.event.service.OrganizerService;
 
 import jakarta.validation.Valid;
@@ -24,7 +25,7 @@ public class OrganizerController {
 	private OrganizerService organizerService;
 
 	@PostMapping(value = "/addorganizer")
-	public ResponseEntity<String> addOrganizer(@Valid @RequestBody OrganizerDTO organizerDTO, Errors errors) {
+	public ResponseEntity<String> addOrganizer(@Valid @RequestBody OrganizerDTO organizerDTO, Errors errors) throws NoEventException {
 
 		String response = "";
 

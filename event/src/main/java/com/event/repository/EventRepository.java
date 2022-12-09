@@ -10,4 +10,5 @@ import com.event.entity.EventEntity;
 @Repository
 public interface EventRepository extends JpaRepository<EventEntity, String> {
 	public Optional<EventEntity> findByEventId(String eventId);
+	public Optional<EventEntity> findByEventName(String eventName);
 }

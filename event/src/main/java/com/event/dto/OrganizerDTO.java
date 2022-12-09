@@ -45,8 +45,7 @@ public class OrganizerDTO {
 	@NotNull(message = "Event name mandatory")
 	private String eventName;
 	
-	@Pattern(regexp="^\\w{2,25}$",message = "Event department should be in range of 2-25")
-	private String eventDept;
+	private String eventId;
 	
 	
 	
@@ -98,11 +97,11 @@ public class OrganizerDTO {
 	public void setOrganizerDept(String organizerDept) {
 		this.organizerDept = organizerDept;
 	}
-	public String getEventDept() {
-		return eventDept;
+	public String getEventId() {
+		return eventId;
 	}
-	public void setEventDept(String eventDept) {
-		this.eventDept = eventDept;
+	public void setEventId(String eventId) {
+		this.eventId = eventId;
 	}
 	
 	public OrganizerEntity convertToEntity(OrganizerDTO organizerDTO) {
@@ -114,7 +113,7 @@ public class OrganizerDTO {
 		organizerEntity.setOrganizerMail(organizerDTO.getOrganizerMail());
 		organizerEntity.setOrganizerPassword(organizerDTO.getOrganizerPassword());
 		organizerEntity.setEventName(organizerDTO.getEventName());
-		organizerEntity.setEventDept(organizerDTO.getEventDept());
+		organizerEntity.setEventId(organizerDTO.getEventId());
 		return organizerEntity;
 	}
 	

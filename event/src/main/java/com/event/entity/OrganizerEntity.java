@@ -36,8 +36,8 @@ public class OrganizerEntity {
 	@Column(name = "event_name")
 	private String eventName;
 
-	@Column(name = "event_dept")
-	private String eventDept;
+	@Column(name = "event_id")
+	private String eventId;
 	
 	
 
@@ -105,12 +105,14 @@ public class OrganizerEntity {
 		this.organizerDept = organizerDept;
 	}
 
-	public String getEventDept() {
-		return eventDept;
+	public String getEventId() {
+		return eventId;
 	}
 
-	public void setEventDept(String eventDept) {
-		this.eventDept = eventDept;
+	public void setEventId(String eventId) {
+		this.eventId = eventId;
 	}
+	
+	
 
 }
