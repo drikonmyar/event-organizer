@@ -26,7 +26,7 @@ public class OrganizerDTO {
 	private int organizerYear;
 	
 	@NotNull(message = "Organizer department mandatory")
-	@Pattern(regexp="^\\w{2,25}$",message = "Organizer department should be in range of 2-25")
+	@Pattern(regexp="^\\w{2,4}$",message = "Organizer department should be in range of 2-4")
 	private String organizerDept;
 	
 	@NotNull(message = "Mobile number mandatory")

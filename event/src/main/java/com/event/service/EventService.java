@@ -36,4 +36,19 @@ public class EventService {
 		}
 		throw new NoEventException();
 	}
+	
+	public List<EventDTO> searchEvent(String eventDept) throws NoEventException{
+		List<EventEntity> allEvents = eventRepository.findByEventDept(eventDept);
+		if(allEvents.isEmpty()) {
+			throw new NoEventException();
+		}
+		List<EventDTO> allEventsToDTO = new ArrayList<>();
+		for(int i=0;i<allEvents.size();i++) {
+			EventDTO eventDTO = new EventDTO();
+			eventDTO.convertToDTO(allEvents.get(i), eventDTO);
+			allEventsToDTO.add(eventDTO);
+		}
+		return allEventsToDTO;
+		
+	}
 }

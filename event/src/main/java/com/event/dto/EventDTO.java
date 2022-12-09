@@ -17,7 +17,7 @@ public class EventDTO {
 	@NotNull(message = "Event name mandatory")
 	private String eventName;
 	
-	@Pattern(regexp="^\\w{2,25}$",message = "Event department should be in range of 2-25")
+	@Pattern(regexp="^\\w{2,4}$",message = "Event department should be in range of 2-4")
 	private String eventDept;
 	
 	private String eventDesc;

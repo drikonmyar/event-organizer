@@ -9,6 +9,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -43,8 +44,13 @@ public class EventController {
 
 	}
 	
-	@GetMapping(value="/checkevent")
+	@GetMapping(value="/searchevent/all")
 	public List<EventDTO> checkEvent() throws NoEventException{
 		return eventService.checkEvent();
+	}
+	
+	@GetMapping(value="/searchevent/{eventDept}")
+	public List<EventDTO> searchEvent(@PathVariable String eventDept) throws NoEventException{
+		return eventService.searchEvent(eventDept);
 	}
 }

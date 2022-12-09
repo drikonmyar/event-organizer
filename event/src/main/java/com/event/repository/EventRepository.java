@@ -1,5 +1,6 @@
 package com.event.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,4 +12,5 @@ import com.event.entity.EventEntity;
 public interface EventRepository extends JpaRepository<EventEntity, String> {
 	public Optional<EventEntity> findByEventId(String eventId);
 	public Optional<EventEntity> findByEventName(String eventName);
+	public List<EventEntity> findByEventDept(String eventDept);
 }
