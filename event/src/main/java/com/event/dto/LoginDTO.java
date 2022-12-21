@@ -18,7 +18,4 @@ public class LoginDTO {
 		this.userPassword = userPassword;
 	}
 	
-	
-	
-	
 }
